@@ -1,0 +1,114 @@
+# Rewrite the student_a_level_1.py file to match the SkySafe wireframe layout
+updated_level_1_code = '''
+def get_page_html(form_data):
+    print("Rendering SkySafe Level 1 Page...")
+
+    airport = form_data.get("airport", "")
+    arrival_time = form_data.get("arrival_time", "")
+
+    page_html = f"""
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>SkySafe - Level 1</title>
+        <style>
+            body {{
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                padding: 20px;
+            }}
+            .container {{
+                max-width: 1000px;
+                margin: auto;
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px #ccc;
+            }}
+            header {{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }}
+            header h1 span {{
+                font-size: 0.6em;
+                color: gray;
+            }}
+            input {{
+                margin: 10px;
+                padding: 8px;
+                width: 45%;
+            }}
+            button {{
+                padding: 8px 12px;
+                margin-left: 10px;
+            }}
+            .columns {{
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+                margin-top: 20px;
+            }}
+            .box {{
+                width: 45%;
+                background: #f9f9f9;
+                padding: 15px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+            }}
+            h2, h3 {{
+                margin-top: 0;
+            }}
+            ul {{
+                list-style-type: none;
+                padding: 0;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>SkySafe <span>weatherreport.com</span></h1>
+                <button onclick="window.history.back()">Go back</button>
+            </header>
+
+            <form method="post">
+                <input type="text" name="airport" placeholder="Please type in your destination airport" value="{airport}">
+                <input type="text" name="arrival_time" placeholder="Please type in your expected arrival time" value="{arrival_time}">
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="columns">
+                <div class="box">
+                    <h2>METAR/TAF Summary</h2>
+                    <ul>
+                        <li>Conditions: Clear</li>
+                        <li>Temperature: 20°C</li>
+                        <li>Visibility: 10km</li>
+                        <li>Headwind: 5 knots</li>
+                        <li>Cloud ceiling: 2000 ft</li>
+                        <li>Overcast: No</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2>7 Day Forecast</h2>
+                    <h3>Weather Warnings</h3>
+                    <p>Warnings: None</p>
+                    <p>Weather Type: Sunny</p>
+                    <h3>Visibility</h3>
+                    <p>Good throughout the week</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+    return page_html
+'''
+
+# Save this updated code into the original file
+with open("/mnt/data/sky_safe_project/student_a_level_1.py", "w") as file:
+    file.write(updated_level_1_code)
+
+"/mnt/data/sky_safe_project/student_a_level_1.py has been updated with SkySafe layout."
